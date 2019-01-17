@@ -6,10 +6,10 @@
 // Your height in meters as a float
 // Whether you are married or not as a boolean
 
-var myname: string = "Orsi Nagy"
-var myage: number = 27
-var myheight: number = 1.62
-var marriedstatus: boolean = false
+var myname: string = "Orsi Nagy";
+var myage: number = 27;
+var myheight: number = 1.62;
+var marriedstatus: boolean = false;
 console.log (myname);
 console.log (myage);
 console.log (myheight);

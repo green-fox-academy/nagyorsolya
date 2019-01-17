@@ -10,10 +10,10 @@
 //  31
 //  1.87
 
-var myname = 'Nagy Orsi'
-var myage = '27'
-var myheight:number = 1.63 
+var myname = 'Nagy Orsi';
+var myage = '27';
+var myheight:number = 1.63;
 
-console.log (myname)
-console.log (myage)
-console.log (myheight + ' meters')
+console.log (myname);
+console.log (myage);
+console.log (myheight + ' meters');

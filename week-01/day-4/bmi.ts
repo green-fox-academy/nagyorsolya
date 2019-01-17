@@ -8,5 +8,5 @@ let heightInM: number = 1.78;
 //divide your weight in kilograms (kg) by your height in metres (m)
 //then divide the answer by your height again to get your BMI.
 
-var BMI = (massInKg/heightInM)/heightInM
+var BMI = (massInKg/heightInM)/heightInM;
 console.log (BMI);

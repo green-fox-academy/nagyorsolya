@@ -1,24 +1,24 @@
-'use strict';
+ 'use strict';
 
 let a: number = 3;
 // make it bigger by 10
-a = a+10
+a = a+10;
 
 console.log(a);
 
 let b: number = 100;
 // make it smaller by 7
-b = b-7
+b = b-7;
 console.log(b);
 
 let c: number = 44;
 // double c's value
-c = c*2
+c = c*2;
 console.log(c);
 
 let d: number = 125;
 // divide d's value by 5
-d = d/5
+d = d/5;
 console.log(d);
 
 let e: number = 8;
@@ -47,9 +47,9 @@ console.log(i1 > (i2**2) && i1 < Math.pow (3, 3));
 
 let j: number = 1521;
 // tell if j is divisible by 3 or 5 (as a boolean)
-console.log(j%3 == 0 || j%5 == 0)
+console.log(j%3 == 0 || j%5 == 0);
 
 let k: string = 'Apple';
 // fill the k variable with its content 4 times
-k = k+k+k+k
+k = k+k+k+k;
 console.log(k);

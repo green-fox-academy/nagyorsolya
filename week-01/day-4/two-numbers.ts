@@ -11,10 +11,10 @@
 // Print the result of 22 divided by 13 (as a decimal fraction)
 
 // Print the reminder of 22 divided by 13
-console.log (13 + 22)
-console.log (22-13)
-console.log (22*13)
-var number = 22 / 13
-var shortnumber = number.toFixed(2)
-console.log (shortnumber)
-console.log (22 % 13)
+console.log (13 + 22);
+console.log (22-13);
+console.log (22*13);
+var number = 22 / 13;
+var shortnumber = number.toFixed(2);
+console.log (shortnumber);
+console.log (22 % 13);
