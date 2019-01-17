@@ -9,4 +9,4 @@ let heightInM: number = 1.78;
 //then divide the answer by your height again to get your BMI.
 
 var BMI = (massInKg/heightInM)/heightInM
-console.log (BMI)
+console.log (BMI);
