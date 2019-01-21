@@ -3,7 +3,7 @@
 // -  Log the result of `doubling(baseNum)` to the console
 let baseNum = "123"
 
-function doubling(a){
+function doubling(a:any) :number {
 a = parseInt(a)*2;
 return a;
 }
