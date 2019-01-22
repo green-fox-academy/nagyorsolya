@@ -9,12 +9,15 @@ var boys: string[] = ['Joe', 'Fred', 'Tom', 'Todd', 'Neef', 'Jeff'];
 
 function makingMatches(a: string[], b: string[]) {
     let newarray: string[] = [];
-    for (var i = 0; i <b.length; i=i+2) {
-
-            newarray.splice(i, 0, girls[i]);
-            newarray.splice(i + 1, 0, boys[i]);
-
-        var output = newarray;
+    for (var i = 0; i <b.length;i++) {
+        if (a[i] !== undefined && b[i] !== undefined) {
+            newarray.splice(i*2, 0, a[i]);
+            newarray.splice(i*2 + 1, 0, b[i]);
+        }
+        else {
+            newarray.splice(i*2,0,b[i]);
+        }
+    var output = newarray;
     }
     return output;
 }
