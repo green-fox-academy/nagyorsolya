@@ -16,6 +16,6 @@ for (let k:number = 0; k<m+1;k++) {
     let csillagokszama:number = (k*2)+1;
     for (let i: number = 0; i<csillagokszama; i++) {
         csillag=csillag+"*";
-    }
+    } 
     console.log(space+csillag);
 }
