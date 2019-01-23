@@ -1,5 +1,4 @@
 'use strict';
-export {}
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
@@ -13,7 +12,12 @@ const ctx = canvas.getContext('2d');
 // Avoid code duplication.
 
 function squaredrawing (x, y) {
-    for ()
-
-    return y;
-}
+    for (let y = 50; y < 200 ; y = y+60) {
+             ctx.beginPath();
+             ctx.fillStyle = "pink";
+             ctx.fillRect(x,y, 50,50);
+            };
+            return y;
+        };
+        
+        console.log(squaredrawing(100,0));
