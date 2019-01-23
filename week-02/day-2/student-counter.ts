@@ -17,13 +17,14 @@ const students: any[] = [
   ];
  /*console.log(test.candies); */
 
-function sumcandy(a: any [][], key) {
-    let result = ""
-for (let i = 0;i<a[i].length;i++) {
-        result += a[i][2].key;
+function sumcandy(a: any []) {
+    let result = 0;
+for (let i = 0;i<a.length;i++) {
+        result += a[i].candies;
+        console.log(result);
     };
     let final = result;
     return final;
 }
 
-console.log(sumcandy(students, candies));
+console.log(sumcandy(students));
