@@ -17,7 +17,7 @@ function multisquares (a) {
     let z = 0;
     let x = 300-a/2;
     let y = 200-a/2;
-    for (let i = 0; i <4;i++){
+    for (let i = 0; i <3;i++){
     ctx.fillStyle = colors[z];
     ctx.fillRect(x,y,a,a);
     z = z+1;
