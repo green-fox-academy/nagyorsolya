@@ -28,6 +28,4 @@ function multisquares(a) {
   return a;
 };
 
-console.log(multisquares(300));
-
-/* for (z; z <= a/4; z = a/2) */
+console.log(multisquares(150));
