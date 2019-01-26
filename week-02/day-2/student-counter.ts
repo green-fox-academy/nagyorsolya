@@ -25,6 +25,6 @@ for (let i = 0;i<a.length;i++) {
     };
     let final = result;
     return final;
-}
+};
 
 console.log(sumcandy(students));
