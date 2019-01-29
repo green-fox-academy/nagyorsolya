@@ -9,7 +9,7 @@
 // | fresh_cream        | Yes           | 1        |
 // | captain_morgan_rum | Yes           | 2        |
 // | mint_leaves        | No            | -        |
-// +--------------------+---------------+----------+
+// +--------------------+---------------+----------+s
 //
 // OPTIONAL
 // The frist columns should be automatically as wide as the longest key
