@@ -16,6 +16,11 @@ this.width = b;
   }
   use () {
     this.inkAmount--;
+   return this.inkAmount;
   }  
 }
 
+let pen1 = new Sharpie ("yellow", 10);
+let pen2 = new Sharpie ("black", 20);
+
+console.log(pen1.use());
