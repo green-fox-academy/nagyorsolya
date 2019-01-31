@@ -1,4 +1,4 @@
-import { inherits } from "util";
+ import { inherits } from "util";
 
 /*Create a Counter class
 which has an integer property
@@ -14,7 +14,6 @@ class Counter {
 
   constructor(a) {
     this.integer = a;
-    this.initialValue = a;
   }
   add() {
    this.integer++;
@@ -29,5 +28,5 @@ class Counter {
 }
 
 let abc = new Counter (6);
-abc.get();
+console.log(abc.reset());
 
