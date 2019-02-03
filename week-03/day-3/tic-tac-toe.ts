@@ -8,30 +8,8 @@ let fs = require('fs');
 // We have provided you some example files (draw.txt, win-x.txt, win-o.txt)
 // Return "X", "O" or "Draw" based on the input file
 
-//First I need to convert the .txt files to a variable and "upload" them to the multidimensional array
-/*let content: string = "";
-let contentarray: string [] = [];
-let newarray: any [][] = [];
-content = fs.readFileSync("win-o.txt", "utf-8");
-contentarray = content.split("");
-contentarray.splice(3,2);
-contentarray.splice(6,2);
-let size = 3;
 
-for (let i = 0; i < size; i++) {
-  newarray[i] = [];
-  for (let j = 0; j < size; j++) {
-      newarray[i][j] = contentarray[i+j];
-      if (i === 1) {
-        newarray[i][j] = contentarray[i+j+2];
-      }
-      else if (i === 2) {
-        newarray[i][j] = contentarray[i+j+4];
-      }
-  }
-}; */
-
-//Second, we need to iterate through the arrays and check the elements
+//First, we need to convert the .txt files to a readable array
 
 function ticTacResult(inputFile) {
 
@@ -58,6 +36,8 @@ function ticTacResult(inputFile) {
   };
 
   let isThereAWinner: boolean = false;
+
+  //Second, we need to establish if statements for the different scenarios
 
   for (let i = 0; i < inputArray.length; i++) {
              //This is for the horizontal lines
@@ -102,25 +82,3 @@ function ticTacResult(inputFile) {
   };
 
   ticTacResult("draw.txt");
-
-   /* // Then we need to establish if statements for the different scenarios
-    //This will be for the vertical lines
-      if (a[i][j] === a[i][j + 1] && a[j] === a[j + 2] && a[j] === "x") {
-        
-        console.log("X wins!");
-
-      }
-      else if
-}
-  //This will be for the horizontal lines
-
-  //And this will be for the diagonals
-
-console.log(ticTacResult('win-o.txt'))
-// Should print "O"
-
-console.log(ticTacResult('win-x.txt'))
-// Should print "X"
-
-console.log(ticTacResult('draw.txt'))
-// Should print "Draw" */
