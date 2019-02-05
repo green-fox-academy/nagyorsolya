@@ -24,7 +24,7 @@ class Flower {
 class Tree {
   color: string;
   waterLevel: number;
-  constructor (newColor: string, newWaterLevel: number = 9) {
+  constructor (newColor: string, newWaterLevel: number = 3) {
     this.color = newColor;
     this.waterLevel = newWaterLevel;
   }
@@ -70,7 +70,8 @@ class Garden {
       if (this.trees[i].waterLevel < 10) {
         console.log("The " + this.trees[i].color + " tree needs water.")
       }
-      else {"The " + this.trees[i].color + " tree doesn't need watering."
+      else {
+        console.log("The " + this.trees[i].color + " tree doesn't need watering.")
       }
     }
     for (let j = 0; j < this.flowers.length; j++) {
@@ -87,7 +88,7 @@ class Garden {
 let flower1 = new Flower("yellow");
 let flower2 = new Flower("blue", 3);
 let tree1 = new Tree("purple");
-let tree2 = new Tree("orange", 8);
+let tree2 = new Tree("orange", 3);
 
 let garden1 = new Garden;
 garden1.addFlower(flower1);
@@ -95,4 +96,10 @@ garden1.addFlower(flower2);
 garden1.addTree(tree1);
 garden1.addTree(tree2);
 
+garden1.checkWaterLevel();
+console.log("Watering with 40");
+garden1.watering(40);
+garden1.checkWaterLevel();
+console.log("Watering with 70")
+garden1.watering(70);
 garden1.checkWaterLevel();
