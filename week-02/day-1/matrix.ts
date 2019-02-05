@@ -1,3 +1,4 @@
+//First solution
 let matrix: number [][] = [];
 let size: number = 4;
 for (let i = 0; i < size; i++) {
@@ -11,4 +12,22 @@ for (let i = 0; i < size; i++) {
      }
     }
     console.log(matrix[i]);
+} 
+
+//Second solution
+
+let matrix2: number [][] = [];
+let matrixSize = 4;
+
+for (let i = 0; i < matrixSize; i++) {
+  matrix2.push([]);
+  for (let j = 0; j < matrixSize; j++) {
+      if (j === matrixSize-i-1) {
+        matrix2[i].push(1);
+      }
+      else {
+        matrix2[i].push(0);
+      }
+}
+console.log(matrix2[i]);
 }

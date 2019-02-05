@@ -7,7 +7,7 @@ export { }
 var girls: string[] = ['Eve', 'Ashley', 'Claire', 'Kat', 'Jane'];
 var boys: string[] = ['Joe', 'Fred', 'Tom', 'Todd', 'Neef', 'Jeff'];
 
-function makingMatches(a: string[], b: string[]) {
+function makingMatches(a: string[], b: string[]) :any {
     let newarray: string[] = [];
     for (var i = 0; i <b.length;i++) {
         if (a[i] !== undefined && b[i] !== undefined) {

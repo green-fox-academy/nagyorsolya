@@ -1,12 +1,26 @@
 'use strict';
 export {}
 
-class Flower {
+'use strict';
+export {}
+
+class Plant {
   color: string;
   waterLevel: number;
-  constructor (newColor: string, newWaterLevel: number = 2) {
+  waterIntake: number;
+  constructor (newColor: string, newWaterLevel: number =2) {
     this.color = newColor;
     this.waterLevel = newWaterLevel;
+  }
+  watering(newWaterAmount: number) {
+    this.waterLevel += (newWaterAmount * this.waterIntake);
+  }
+}
+
+class Flower extends Plant {
+  waterIntake:number = 0.75;
+  constructor (newColor: string, newWaterLevel: number = 2) {
+    super(newColor, newWaterLevel)
   }
   checkWaterLevel () {
     if (this.waterLevel < 5) {
@@ -16,17 +30,12 @@ class Flower {
       console.log("The " + this.color + " flower doesn't need watering.");
     }
   }
-  watering(newWaterAmount: number) {
-    this.waterLevel += (newWaterAmount * 0.75);
-  }
 }
 
-class Tree {
-  color: string;
-  waterLevel: number;
+class Tree extends Plant {
+  waterIntake: number = 0.4;
   constructor (newColor: string, newWaterLevel: number = 3) {
-    this.color = newColor;
-    this.waterLevel = newWaterLevel;
+    super(newColor, newWaterLevel)
   }
   checkWaterLevel () {
     if (this.waterLevel < 10) {
@@ -35,9 +44,6 @@ class Tree {
     else {
       console.log("The " + this.color + " tree doesn't need watering.");
     }
-}
-watering(newWaterAmount: number) {
-  this.waterLevel += (newWaterAmount * 0.4);
 }
 }
 class Garden {

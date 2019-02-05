@@ -26,6 +26,24 @@ console.log(addresses);
   catch (error) {
     console.log(error.message);
   }
-};
+}; 
 
 webBrowser();
+
+function ratio () {
+    let fileContent = fs.readFileSync("log.txt", "utf-8");
+    let list = [];
+    list = fileContent.split(" /" );
+    let getArray = [];
+    let postArray = [];
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].indexOf("GET") >= 0) {
+        getArray.push(list[i]);
+      }
+      else { 
+        postArray.push(list[i]);
+      }
+    }
+    console.log(postArray.length / getArray.length);
+    };
+    ratio();
