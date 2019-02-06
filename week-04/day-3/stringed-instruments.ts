@@ -22,7 +22,7 @@ abstract class StringedInstrument extends Instrument {
 
 class ElectricGuitar extends StringedInstrument {
   _name: string = "Electric Guitar";
-  constructor(newNumberOfStrings: number) {
+  constructor(newNumberOfStrings: number = 6) {
     super(newNumberOfStrings)
   }
   sound() {
@@ -32,7 +32,7 @@ class ElectricGuitar extends StringedInstrument {
 
 class BassGuitar extends StringedInstrument {
   _name: string = "Bass Guitar";
-  constructor(newNumberOfStrings: number = 2) {
+  constructor(newNumberOfStrings: number = 4) {
     super(newNumberOfStrings)
   }
   sound() {
@@ -42,7 +42,7 @@ class BassGuitar extends StringedInstrument {
 
 class Violin extends StringedInstrument {
   _name: string = "Violin";
-  constructor(newNumberOfStrings: number) {
+  constructor(newNumberOfStrings: number = 4) {
     super(newNumberOfStrings)
   }
   sound() {
@@ -50,10 +50,20 @@ class Violin extends StringedInstrument {
   }
 }
 
-let guitar = new ElectricGuitar(6);
-let bassGuitar = new BassGuitar(4);
-let violin = new Violin(4);
+console.log('Test 1, create Electric Guitar, Bass Guitar and Violin with default strings.');
+let guitar = new ElectricGuitar();
+let bassGuitar = new BassGuitar();
+let violin = new Violin();
 
+console.log('Test 1 Play');
 guitar.play();
 bassGuitar.play();
 violin.play();
+
+console.log('Test 2, create Electric Guitar, Bass Guitar with 7 and 5 strings .');
+let guitar2 = new ElectricGuitar(7);
+let bassGuitar2 = new BassGuitar(5);
+
+console.log('Test 2 Play');
+guitar2.play();
+bassGuitar2.play();
