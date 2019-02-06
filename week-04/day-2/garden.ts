@@ -1,9 +1,6 @@
 'use strict';
 export {}
 
-'use strict';
-export {}
-
 class Plant {
   color: string;
   waterLevel: number;
