@@ -1,5 +1,6 @@
-import {Apple} from './apples'
-import {Sum} from './sum'
+//import {Apple} from './apples'
+//import {Sum} from './sum'
+import {isAnagram} from './anagram';
 
 let test = require('tape');
 
@@ -10,8 +11,16 @@ let test = require('tape');
   t.end();
 });*/
 
-test('Get the sum of the two numbers', (t) => {
+/*test('Get the sum of the two numbers', (t) => {
   let newList = new Sum ([0,1,2,3])
   t.equal (newList.sum(), 6)
   t.end();
+});*/
+
+test ('Check if the words are anagrams', (t) => {
+let firstWord: string = "alma";
+let secondWord: string = "alma";
+
+t.equal(isAnagram(firstWord,secondWord), true);
+t.end();
 });
