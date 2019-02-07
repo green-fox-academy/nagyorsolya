@@ -1,8 +1,16 @@
 //import {Apple} from './apples'
 //import {Sum} from './sum'
-import {isAnagram} from './anagram';
+//import {isAnagram} from './anagram';
+import {dictionary} from './count-letters'
 
 let test = require('tape');
+
+test('Get the occurence of the letters', (t) => {
+  let testString: string = "alma";
+  
+  t.deepEqual(dictionary(testString), { a: 2, l: 1, m: 1 })
+  t.end();
+});
 
 /*test('Get the name field of class', (t) => {
   let newApple = new Apple ("green");
@@ -17,10 +25,10 @@ let test = require('tape');
   t.end();
 });*/
 
-test ('Check if the words are anagrams', (t) => {
+/*test ('Check if the words are anagrams', (t) => {
 let firstWord: string = "alma";
 let secondWord: string = "alma";
 
 t.equal(isAnagram(firstWord,secondWord), true);
 t.end();
-});
+});*/
