@@ -1,5 +1,8 @@
 'use strict';
 
+let readlineSync = require('readline-sync');
+let fs = require('fs');
+
 class Todo {
   name: string;
   isCompleted: boolean = false;
@@ -15,19 +18,15 @@ let task1 = new Todo ("Walk the dog");
 let task2 = new Todo ("Buy Milk");
 let task3 = new Todo ("Do homework");
 
-/*let readlineSync = require('readline-sync');
-let fs = require('fs');
-let content: string = fs.readFileSync("todolist.txt", "utf-8")
-let goodContent: any [] = content.split("\n")
+let todoArray: any [] = [];
+todoArray.push(task1);
+todoArray.push(task2);
+todoArray.push(task3);
+console.log(todoArray);
 
-function removeChars(array: any) {
-  let something: any[] = [];
-  for (let i = 0; i < array.length; i++) {
-    something[i] = array[i].replace("\r", "");
-  }
-  return something;
-}
-goodContent = removeChars(goodContent); */
+for (let i = 0; i < todoArray.length; i++) {
+  fs.appendFileSync("todolist.txt", todoArray[i].name + "\n");
+};
 
 let input1: string = readlineSync.question(
   'Welcome to my todo app, what would you like to add today? '
@@ -40,11 +39,27 @@ if (input1 === "") {
   Command line arguments:
    -l   Lists all the tasks
    -a   Adds a new task
-   (Please add a space and then write your task to be added.)
    -r   Removes a task
    -c   Completes a task`);
 }
 
+if (input1 === "-l") {
+  
+}
+/*
+let content: string = fs.readFileSync("todolist.txt", "utf-8")
+let goodContent: any [] = content.split("\n")
+
+function removeChars(array: any) {
+  let something: any[] = [];
+  for (let i = 0; i < array.length; i++) {
+    something[i] = array[i].replace("\r", "");
+  }
+  return something;
+}
+goodContent = removeChars(goodContent); */
+
+/*
 let input2: string = readlineSync.question(
   ''
 );
