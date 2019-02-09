@@ -7,8 +7,7 @@ export class Sum {
   }
   sum(): number {
    return this.list.reduce(function (summaryValue:number, currentNumber: number) {
-      return summaryValue += currentNumber;
-    
+      return summaryValue += currentNumber;    
     },0);
   }
-};
+}; 
