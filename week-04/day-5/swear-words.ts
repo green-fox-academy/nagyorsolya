@@ -10,38 +10,17 @@ let offensiveWords: string[] = ['fuck', 'bloody', 'cock', 'shit', 'fucker', 'fuc
 
 function familyFriendlizer (inputFile: any, inputArray:string []) {
   let content: string = fs.readFileSync(inputFile, "utf-8");
-  let contentArray: any [] = content.split(".");
-  let goodContent: any [] = [];
-  let removedWords = [];
-  for (let i:number = 0; i < contentArray.length; i++) {
-  goodContent.push(contentArray[i].split(" "))
-  }
-  //console.log(goodContent);
-  for (let i = 0; i < goodContent.length; i++) {
-      for (let j = 0; j < goodContent[i].length; j++) {
-        if (goodContent[i][j] === offensiveWords[0] || goodContent[i][j] === offensiveWords[1] || goodContent[i][j] === offensiveWords[2] || goodContent[i][j] === offensiveWords[3]
-             || goodContent[i][j] === offensiveWords[4] || goodContent[i][j] === offensiveWords[5] || goodContent[i][j] === offensiveWords[6] || goodContent[i][j] === offensiveWords[7]
-             || goodContent[i][j] === offensiveWords[8]) {
-               removedWords.push(goodContent.splice([i][j], 1))
-             }
-      }
-  }
-  console.log(removedWords);
-}
-  /*content.toLowerCase;
-  for (let i: any = 0; i < offensiveWords.length; i++) {
-    content.replace(i, "*");
-  }
-  console.log(content);
-  let contentArray: any [] = content.split(" ");
-  let removedWords = [];
+  content = content.toLowerCase();
+  let contentArray: string [] = content.split(" ");
+  let counter: number = 0;
   for (let i: number = 0; i < contentArray.length; i++) {
-    if (contentArray[i] === "*") {
-      removedWords.push(contentArray.splice(i,1))
+    for (let j: number = 0; j < offensiveWords.length; j++) {
+      if (contentArray[i].split(".").join("").split(",").join("") === offensiveWords[j]) {
+        counter++;
+      }
     }
+   }
+   return counter;
   }
-  console.log(removedWords.length);
-  }; */
 
-familyFriendlizer("content.txt", offensiveWords);
-//console.log(familyFriendlizer('content.txt', offensiveWords)); // should print out 17
+  console.log(familyFriendlizer("content.txt", offensiveWords));
