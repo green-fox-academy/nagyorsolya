@@ -15,6 +15,7 @@ function familyFriendlizer (inputFile: any, inputArray:string []) {
   let counter: number = 0;
   for (let i: number = 0; i < contentArray.length; i++) {
     for (let j: number = 0; j < offensiveWords.length; j++) {
+      //Solution with regex: if (contentArray[i].replace(/[^A-Za-z]/g, "") === offensiveWords[j])
       if (contentArray[i].split(".").join("").split(",").join("") === offensiveWords[j]) {
         counter++;
       }
