@@ -1,33 +1,35 @@
+'use strict';
+
 class DiceSet {
     dice: number[];
     readonly numOfDices: number = 6;
 
     roll(): number[] {
         this.dice = [];
-        for(var i = 0; i < this.numOfDices; i++) { 
+        for (var i = 0; i < this.numOfDices; i++) {
             this.dice.push(Math.floor(Math.random() * 6 + 1));
         }
         return this.dice;
     }
 
     reroll(index?: number) {
-        if(index == undefined) {
-            for(var i = 0; i < this.numOfDices; i++) { 
+        if (index == undefined) {
+            for (var i = 0; i < this.numOfDices; i++) {
                 this.dice[i] = Math.floor(Math.random() * 6 + 1);
             }
         } else {
             this.dice[index] = Math.floor(Math.random() * 6 + 1);
         }
     }
-    
+
     getCurrent(index?: number) {
-        if(index == undefined) {
-            for(var i = 0; i < this.numOfDices; i++) { 
+        if (index == undefined) {
+            for (var i = 0; i < this.numOfDices; i++) {
                 return this.dice[i];
             }
         } else {
             return this.dice[index];
-        }        
+        }
     }
 }
 
@@ -38,7 +40,7 @@ class DiceSet {
 // Your task is to roll the dice until all of the dice are 6
 
 let diceSet = new DiceSet();
-console.log(diceSet.roll());
+/*console.log(diceSet.roll());
 console.log(diceSet.getCurrent());
 
 console.log("------------------");
@@ -55,4 +57,17 @@ console.log(diceSet.getCurrent());
 console.log("------------------");
 
 diceSet.reroll(4);
-console.log(diceSet.getCurrent());
+console.log(diceSet.getCurrent()); */
+
+function rollSixes() {
+    diceSet.roll();
+    console.log(diceSet);
+    for (let i: number = 0; i < diceSet.dice.length; i++) {
+        while (diceSet.getCurrent(i) != 6) {
+            diceSet.reroll(i);
+            console.log(diceSet);
+        }
+    }
+};
+
+rollSixes();
