@@ -1,4 +1,7 @@
 'use strict';
+let readlineSync = require('readline-sync');
+export{}
+
 // Create a simple calculator application which does read the parameters from the standard input
 // and prints the result to the console.
 
@@ -19,4 +22,20 @@
 
 /*const args = process.argv.splice(2); // Just a helper for you to get started */
 
-console.log('Input params are', args);
+function calculate(operand: string, firstNum: number, secondNum: number) {
+  let result: number = 0;
+  if (operand === "+") {
+    result = firstNum + secondNum;
+  }
+  else if (operand === "-") {
+    result = firstNum - secondNum;
+  }
+  else if (operand === "*") {
+    result = firstNum * secondNum;
+  }
+  else if (operand === "/") {
+    result = firstNum / secondNum;
+  }
+return result;
+}
+console.log(calculate("+",0,3));
