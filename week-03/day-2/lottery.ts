@@ -43,19 +43,58 @@ for (let i = 0; i < justTheNumbers.length; i++) {
 }
 console.log("The most common character is " + item + " (" + mf + " times).");
 
+export function dictionary(inputString: string) {
+  //First I will create a string array from the inputString
+  let inputStringArray: string[] = inputString.split("");
+  let returnObject: object = {};
+  //Then I will iterate through the array and only keep one of every character
+  for (let i = 0; i < inputStringArray.length; i++) {
+    if (returnObject[inputStringArray[i]]) {
+      returnObject[inputStringArray[i]]++;
+    }
+    else {
+      returnObject[inputStringArray[i]] = 1;
+    }
+  }
+  return returnObject;
+}
 
-
-/*let newContentArray: string [] = [];
-let clearContentArray: string [] = [];
-
-for (let i: number = 0; i < contentArray.length; i++) {
-  if (i % 4 === 0) {
-    newContentArray.push(contentArray[i]);
+class Something {
+  name: string;
+  value: number;
+  constructor (newName: string, newValue: number) {
+    this.name = newName;
+    this.value = newValue;
   }
 }
-for (let i: number = 0; i < newContentArray.length; i++) {
-  clearContentArray.push(newContentArray[i].replace("\r", " "));
-  }
-for (let i: number = 0; i < newContentArray.length; i++) {
 
-}*/
+function countFiveMostCommon () {
+  let returnArray = {};
+  this.justTheNumbers.forEach(number => {
+    if (justTheNumbers[number]) {
+
+    }
+  })
+
+}
+
+
+console.log(countFiveMostCommon());
+
+let pagesByAuthor: Object = {};
+this.listOfBooks.forEach(book => {
+  if (pagesByAuthor[book.author]) {
+    pagesByAuthor[book.author] += book.numOfPages;
+  } else {
+    pagesByAuthor[book.author] = book.numOfPages;
+  }
+});
+let sortedNumberOfPages: any[] = Object.keys(pagesByAuthor).map(author => {
+  return {
+    author,
+    pages: pagesByAuthor[author]
+  };
+}).sort((a, b) => b.pages - a.pages);
+return sortedNumberOfPages[0].author;
+}
+};
