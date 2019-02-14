@@ -1,5 +1,4 @@
 'use strict';
-export {}
 /*Create a class with one method (eg. getApple()) that returns a string (eg. 'apple')
 Create a test for that:
 Create a test method

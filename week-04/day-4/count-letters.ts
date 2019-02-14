@@ -16,4 +16,4 @@ export function dictionary(inputString: string) {
   return returnObject;
 }
 
-console.log(dictionary("alma"));
+console.log(dictionary("aassddsasdasfsdgsasgsa"));

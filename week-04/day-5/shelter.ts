@@ -109,7 +109,7 @@ class Parrot extends Animal {
   healCost: number = generateRandomNumber(4, 10);
 }
 //This function will generate the random healing cost numbers
-function generateRandomNumber(min_value, max_value) {
+export function generateRandomNumber(min_value: number, max_value: number) {
   let newNumber: number = 0;
   newNumber = Math.random() * (max_value - min_value) + min_value;
   return Math.floor(newNumber);
