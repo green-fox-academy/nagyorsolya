@@ -13,9 +13,12 @@ class Aircraft {
     let counter: number = 0;
     for (let i: number = this.currentAmmo; i < this.maxAmmo;i++) {
       if (this.currentAmmo < this.maxAmmo) {
-        
+        counter++;
       }
     }
+    this.currentAmmo += counter;
+    inputNum -= counter;
+    return inputNum;
   }
 }
 
