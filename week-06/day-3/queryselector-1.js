@@ -1,32 +1,25 @@
 'use strict';
-/*
 //This is the first exercise
-let king: any = document.getElementById("b325");
+var king = document.getElementById("b325");
 console.log(king);
-
 //This is the second exercise
-let businessLamp: any[] = [];
-
-let asteroid: any = document.getElementsByClassName("asteroid");
+var businessLamp = [];
+var asteroid = document.getElementsByClassName("asteroid");
 console.log(asteroid);
-
-for (let i: number = 0; i < asteroid.length; i++) {
-  if (asteroid[i].innerText === "The Businessman" || asteroid[i].innerText === "The Lamplighter") {
-    businessLamp.push(asteroid[i]);
-  }
+for (var i = 0; i < asteroid.length; i++) {
+    if (asteroid[i].innerText === "The Businessman" || asteroid[i].innerText === "The Lamplighter") {
+        businessLamp.push(asteroid[i]);
+    }
 }
-
-businessLamp.forEach(element => {
-  console.log(element);
+businessLamp.forEach(function (element) {
+    console.log(element);
 });
-
-//This is the third exercise
-
-let conceitedKing: any = document.getElementsByClassName("container");
-
-for (let i: number = 0; i < conceitedKing[0].children.length; i++) {
- console.log(conceitedKing[0].children[i].innerText);
-}; */
+//This is the third exercise 
+var conceitedKing = document.getElementsByClassName("container");
+for (var i = 0; i < conceitedKing[0].children.length; i++) {
+    console.log(conceitedKing[0].children[i].innerText);
+}
+;
 //This is the forth exercise
 var noBusiness = [];
 var containerElements = document.getElementsByClassName("container");

@@ -1,5 +1,5 @@
 'use strict';
-/*
+
 //This is the first exercise
 let king: any = document.getElementById("b325");
 console.log(king);
@@ -26,7 +26,7 @@ let conceitedKing: any = document.getElementsByClassName("container");
 
 for (let i: number = 0; i < conceitedKing[0].children.length; i++) {
  console.log(conceitedKing[0].children[i].innerText);
-}; */
+};
 
 //This is the forth exercise
 
