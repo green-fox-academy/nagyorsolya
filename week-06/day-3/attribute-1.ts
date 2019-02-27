@@ -16,7 +16,10 @@ let aTag = document.querySelector("a");
 
 aTag.setAttribute("href", "http://greenfoxacademy.com");
 
-//This is the third exercise
+//This is the forth exercise
 
-let button1 = document.querySelector(".this-one").setAttribute("disabled", "true");
+let buttonDisable = document.querySelector(".this-one").setAttribute("disabled", "true");
 
+//This is the fifth exercise
+let button2 = document.querySelector(".this-one");
+button2.textContent = "Don't click me!";

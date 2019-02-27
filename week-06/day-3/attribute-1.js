@@ -7,5 +7,8 @@ img.setAttribute("src", "https://i.ndtvimg.com/i/2017-02/australian-quokko-650_6
 //This is the third exercise
 var aTag = document.querySelector("a");
 aTag.setAttribute("href", "http://greenfoxacademy.com");
-//This is the third exercise
-var button1 = document.querySelector(".this-one").setAttribute("disabled", "true");
+//This is the forth exercise
+var buttonDisable = document.querySelector(".this-one").setAttribute("disabled", "true");
+//This is the fifth exercise
+var button2 = document.querySelector(".this-one");
+button2.textContent = "Don't click me!";
