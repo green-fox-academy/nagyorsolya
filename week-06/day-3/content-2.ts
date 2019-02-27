@@ -1,5 +1,5 @@
 'use strict';
-/*
+
 //This is the first exercise
 
 let replaceList: string [] = ['apple', 'banana', 'cat', 'dog'];
@@ -11,7 +11,7 @@ for (let i: number = 0; i < liItems.length; i++) {
 
 for (let i: number = 0; i < liItems.length; i++) {
   console.log(liItems[i].innerText);
-}; */
+};
 
 //This is the second exercise
 
