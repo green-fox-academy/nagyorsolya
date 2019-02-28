@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cocktails</title>
+    <link rel="stylesheet" type="text/css" href="/views/style.css">
+  </head>
+  <body>
+    <h1>Cocktails</h1>
+    <div class="header">
+    <a href="">ALL</a>   <a href="">GIN</a>   <a href="">VODKA</a>   <a href="">RUM</a> <a href="">TEQUILA</a>
+    </div>
+  <div id="content">
+    <div class="container1">
+    <div class=top>
+    <h4 class="name">NAME</h4>
+    </div>
+    <%for (let i = 0; i < cocktails.length; i++) { 
+      if (i % 2 === 0 || i === 0) {%> 
+    <p class="name second"><%=cocktails[i].name%></p>
+    <p class="pTag second"><%=cocktails[i].contains%></p>
+<%}
+else {%>
+  <p class="name first"><%=cocktails[i].name%></p>
+    <p class="pTag first"><%=cocktails[i].contains%></p>
+<%}};%>
+    </div>
+    <div class=container2>
+    <div class="bottom">
+<h4 class="price">PRICE</h4>
+</div>
+<%for (let i = 0; i < cocktails.length; i++) { 
+  if (i % 2 === 0 || i === 0) {%> 
+<p class="prices second"><%=`${cocktails[i].price} Ft`%></p>
+<%}
+else {%>
+  <p class="prices first"><%=`${cocktails[i].price} Ft`%></p>
+<%}};%>
+    </div>
+  </div>
+  </ul>
+  </body>
+</html>
+
