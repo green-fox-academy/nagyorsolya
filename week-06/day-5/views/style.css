@@ -1,41 +1,66 @@
-body {
-  margin: 0;
-}
-
 .container {
   display: flex;
-  width: 70%;
-  height: 500px;
-  border: solid;
+  flex-direction: column;
+}
+
+.top {
   margin: auto;
-  margin-top: 100px;
-  align-items: center;
+  width: 80%;
+  height: 600px;
+  border: solid;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
-.firstbutton {
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-  padding: 0;
-  border: 0;
+.inbetween {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+.buttom {
+  position: relative;
+  bottom: 85px;
+  width: 100%;
+  color: greenyellow;
+  background-color: rgba(0,0,0,0.2);
+} 
 
 img {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
-.secondbutton {
-  width: 50px;
-  height: 50px;
-  margin-right: 20px;
+button {
+  margin: 0;
   padding: 0;
   border: 0;
 }
 
+.buttonpic1 {
+  width: 50px;
+  height: 50px;
+}
+
+.firstbutton {
+  flex-grow: 1;
+  background-color: white;
+}
+
+.secondbutton {
+  flex-grow: 1;
+  background-color: white;
+}
+
+.centerimage {
+  flex-grow: 2;
+}
+
 .rightbutton {
-transform: rotate(180deg);
+  transform: rotate(180deg);
+  width: 50px;
+  height: 50px;
 }
