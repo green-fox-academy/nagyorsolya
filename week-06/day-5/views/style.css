@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 70%;
+  height: 500px;
+  border: solid;
+  margin: auto;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.firstbutton {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  padding: 0;
+  border: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.secondbutton {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  padding: 0;
+  border: 0;
+}
+
+.rightbutton {
+transform: rotate(180deg);
+}
