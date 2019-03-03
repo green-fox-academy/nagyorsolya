@@ -5,36 +5,38 @@
   <link rel="stylesheet" type="text/css" href="/views/style.css">
   <title>Document</title>
 </head>
+<script src="/views/home.js">
+</script>
 <body>
   <div class="container">
     <div class="top">
-    <button class="firstbutton">
+    <button class="firstbutton" onclick="changeImageLeft()">
     <img class='buttonpic1' src="<%=button1%>">
     </button>
       <div class="inbetween">
-      <img src="https://cdn.cnn.com/cnnnext/dam/assets/180612102033-01-baobob-tree-restricted-super-tease.jpg">
+      <img id="masnik" src="<%=gallery[i].path%>">
       <div class="buttom">
-      <p>asdfs</p>
-      <p>agaa</p>
+      <p class="galleryname"><%=gallery[i].name%></p>
+      <p class="gallerytitle"><%=gallery[i].title%></p>
       </div>
       </div>
-    <button class="secondbutton">
+    <button class="secondbutton" onclick="changeImageRight()">
     <img class="rightbutton" src="<%=button1%>">
     </button>
     </div>
   </div>
   <div class="gallery">
   <p class="thumbnail">
-  <img class="gallerimgs" src="">
+  <img class="gallerimgs" src="<%=masni[0]%>" onclick="changeImageAndTitles(0)">
   </p>
   <p class="thumbnail">
-  <img class="gallerimgs" src="">
+  <img class="gallerimgs" src="<%=masni[1]%>" onclick="changeImageAndTitles(1)">
   </p>
   <p class="thumbnail">
-    <img class="gallerimgs" src="">
+    <img class="gallerimgs" src="<%=masni[2]%>" onclick="changeImageAndTitles(2)">
   </p>
   <p class="thumbnail">
-  <img class="gallerimgs" src="">
+  <img class="gallerimgs" src="<%=masni[3]%>" onclick="changeImageAndTitles(3)">
   </p>
   </div>
 </body>
