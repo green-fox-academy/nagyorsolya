@@ -25,19 +25,24 @@
     </button>
     </div>
   </div>
-  <div class="gallery">
-  <p class="thumbnail">
-  <img class="gallerimgs" src="<%=masni[0]%>" onclick="changeImageAndTitles(0)">
-  </p>
-  <p class="thumbnail">
-  <img class="gallerimgs" src="<%=masni[1]%>" onclick="changeImageAndTitles(1)">
-  </p>
-  <p class="thumbnail">
-    <img class="gallerimgs" src="<%=masni[2]%>" onclick="changeImageAndTitles(2)">
-  </p>
-  <p class="thumbnail">
-  <img class="gallerimgs" src="<%=masni[3]%>" onclick="changeImageAndTitles(3)">
-  </p>
-  </div>
+  <div class="container2">
+    <div class="gallery">
+      <div class="pics">
+          <p class="thumbnail">
+          <img class="gallerimgs" src="<%=masni[0]%>" onclick="changeImageAndTitles(0)">
+          </p>
+          <p class="thumbnail">
+          <img class="gallerimgs" src="<%=masni[1]%>" onclick="changeImageAndTitles(1)">
+          </p>
+          <p class="thumbnail">
+          <img class="gallerimgs" src="<%=masni[2]%>" onclick="changeImageAndTitles(2)">
+          </p>
+          <p class="thumbnail">
+          <img class="gallerimgs" src="<%=masni[3]%>" onclick="changeImageAndTitles(3)">
+          </p>
+      </div>
+</div>
+</div>
+<button class="randomPic" onclick="randomPicGenerator()">Click me!</button>
 </body>
 </html>
