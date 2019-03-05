@@ -80,9 +80,12 @@ app.post('/arrays/:action', (req, res) => {
     res.json({result: sumNumbers(data.numbers)})
   }
   else if (what === "multiply") {
-    res.json({result: sumNumbers(data.numbers)})
+    res.json({result: multiplyNums(data.numbers)})
   }
-  })
+  else if (what === "double") {
+    res.json({result: doubleNums(data.numbers)})
+  }
+});
 
 function sumNumbers(numArray) {
   let resultSum = 0;
@@ -91,6 +94,17 @@ function sumNumbers(numArray) {
   };
   return resultSum;
 };
+
+function multiplyNums (numArray) {
+  return numArray.reduce( (a,b) => a * b ); 
+}
+
+function doubleNums (numArray) {
+  for (let i = 0; i < numArray.length; i++) {
+    numArray[i] = numArray[i]*2;
+  };
+  return numArray;
+ };
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
