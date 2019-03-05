@@ -35,6 +35,16 @@ app.get('/greeter', (req, res) => {
     }
 });
 
+app.get('/appenda/:id', (req, res) => {
+  if (!req.params.id) {
+    res.send({error: "404"})
+  }
+  else {
+res.json({appended: req.params.id + "a"})
+  };
+});
+
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
