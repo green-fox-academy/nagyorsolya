@@ -12,13 +12,24 @@ app.get('/', (req, res) => {
 });
 
 app.get('/doubling', (req, res) => {
-  res.json(
-    
+  res.json(    
  req.query.input?{
     received: Number(req.query.input),
     result: Number(req.query.input*2)
   }
   : {error: 'Please provide an input!'});
+});
+
+app.get('/greeter', (req, res) => {
+    if (req.query.name === undefined || !req.query.name) {
+      res.json({error: "Please provide a name!"})
+    }
+    else if (req.query.name && req.query.title) {
+      res.json({welcome_message: `Oh hi there, ${req.query.name}, my dear ${req.query.title}!`})
+    }
+    else if (req.query.title === undefined) {
+      res.json({welcome_message: `Oh hi there, ${req.query.name}!`})
+    }
 });
 
 app.listen(PORT, () => {
