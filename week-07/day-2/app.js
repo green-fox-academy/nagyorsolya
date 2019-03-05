@@ -73,6 +73,25 @@ function rFact(num) {
   }
 }
 
+app.post('/arrays/:action', (req, res) => {
+  let what = req.params.action;
+  let data = req.body; 
+  if (what === "sum") {
+    res.json({result: sumNumbers(data.numbers)})
+  }
+  else if (what === "multiply") {
+    res.json({result: sumNumbers(data.numbers)})
+  }
+  })
+
+function sumNumbers(numArray) {
+  let resultSum = 0;
+  for (let i = 0; i < numArray.length; i++) {
+    resultSum += numArray[i];
+  };
+  return resultSum;
+};
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
