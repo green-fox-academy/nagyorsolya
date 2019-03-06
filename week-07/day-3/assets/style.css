@@ -1,0 +1,11 @@
+.container {
+  width: 100vh;
+  height: 100vh;
+  background-color: plum;
+  margin: auto;
+}
+
+/*img {
+  height: 200px;
+  width: auto;
+}
