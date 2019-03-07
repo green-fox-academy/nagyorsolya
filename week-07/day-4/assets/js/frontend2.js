@@ -1,18 +1,15 @@
 "use strict";
 
-let data = "";
+function whatIsThisDoing (url) {
 let httpRequest = new XMLHttpRequest();
 httpRequest.open(
   "GET",
-  "/booklist"
+ url
 );
-
-console.log(httpRequest.responseText);
-
 httpRequest.onload = () => {
-  data = JSON.parse(httpRequest.responseText);
+  let data = JSON.parse(httpRequest.responseText);
   for (let i = 0; i < data.length; i++ ) {
-    let table = document.getElementsByTagName("table")[0];
+    let table = document.getElementById("content");
     let line = document.createElement("tr");
     let dataElement = document.createElement("td");
     dataElement.innerText = data[i].book_name;
@@ -30,9 +27,19 @@ httpRequest.onload = () => {
     line.appendChild(dataElement4);
     line.appendChild(dataElement5);
     table.appendChild(line);
-
-
   };
   };
-
 httpRequest.send();
+};
+
+//console.log(httpRequest.responseText);
+
+whatIsThisDoing("/booklist");
+
+  let firstButton = document.getElementById("firstbutton");
+  firstButton.addEventListener("click", function () {
+   let divTag = document.getElementById("wrapper");
+   let table = document.getElementById("content");
+   divTag.removeChild(table);
+    whatIsThisDoing("/booklist?category=Medical");
+ }); 

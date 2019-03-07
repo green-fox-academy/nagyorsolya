@@ -31,6 +31,19 @@ app.get("/booknames", (req, res) => {
 
 
 app.get("/booklist", (req, res) => {
+  let search = "SELECT book_mast.book_name, book_mast.book_price, author.aut_name, category.cate_descrip, publisher.pub_name FROM book_mast LEFT JOIN author ON book_mast.aut_id = author.aut_id LEFT JOIN category ON book_mast.cate_id = category.cate_id LEFT JOIN publisher ON publisher.pub_id = book_mast.pub_id";
+  let input = req.query.category;
+  if (input) {
+    conn.query(search +  ` WHERE cate_descrip="${input}";`, (err, rows) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send();
+        return;
+      }
+      res.send(rows);
+    });
+  }
+  else {
   conn.query("SELECT book_mast.book_name, book_mast.book_price, author.aut_name, category.cate_descrip, publisher.pub_name FROM book_mast LEFT JOIN author ON book_mast.aut_id = author.aut_id LEFT JOIN category ON book_mast.cate_id = category.cate_id LEFT JOIN publisher ON publisher.pub_id = book_mast.pub_id;", (err, rows) => {
     if (err) {
       console.error(err);
@@ -38,8 +51,9 @@ app.get("/booklist", (req, res) => {
       return;
     }
     res.send(rows);
-  });
+})};
 });
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/assets/views/index.html'));
