@@ -88,20 +88,52 @@ app.put("/posts/:id", (req, res) => {
   let url = req.body.url;
   let id = req.params.id;
   let userid = req.headers.userid;
-   conn.query(`SELECT user_id FROM posts WHERE post_id = ${id};`, (err, rows) => {
-  let user_id = rows[0].user_id;
-  if (title && url && userid == user_id) {
-      conn.query(`UPDATE posts SET title = '${mysql.escape(title)}' WHERE post_id = ${id};`, (err, rows) => {;});
-      conn.query(`UPDATE posts SET url = '${url}' WHERE post_id = ${id};`, (err, rows) => {;});
+  conn.query(
+    `SELECT user_id FROM posts WHERE post_id = ${id};`,
+    (err, rows) => {
+      let user_id = rows[0].user_id;
+      if (title && url && userid == user_id) {
+        conn.query(
+          `UPDATE posts SET title = '${mysql.escape(
+            title
+          )}' WHERE post_id = ${id};`,
+          (err, rows) => {}
+        );
+        conn.query(
+          `UPDATE posts SET url = '${url}' WHERE post_id = ${id};`,
+          (err, rows) => {}
+        );
+      } else if (title && userid == user_id) {
+        conn.query(
+          `UPDATE posts SET title = '${mysql.escape(
+            title
+          )}' WHERE post_id = ${id};`,
+          (err, rows) => {}
+        );
+      } else if (url && userid == user_id) {
+        conn.query(
+          `UPDATE posts SET url = '${url}' WHERE post_id = ${id};`,
+          (err, rows) => {}
+        );
+      }
+      res.send();
     }
-    else if (title && userid == user_id) {
-      conn.query(`UPDATE posts SET title = '${mysql.escape(title)}' WHERE post_id = ${id};`, (err, rows) => {;});
+  );
+});
+
+app.delete("/posts/:id", (req, res) => {
+  let id = req.params.id;
+  let userid = req.headers.userid;
+  conn.query(
+    `SELECT user_id FROM posts WHERE post_id=${id};`,
+    (err, rows) => {
+      let user_id = rows[0].user_id;
+      if (user_id == userid) {
+        conn.query(`DELETE FROM posts WHERE post_id=${id};`, (err, rows) => {});
+      }
+      res.send();
     }
-    else if (url && userid == user_id) {
-      conn.query(`UPDATE posts SET url = '${url}' WHERE post_id = ${id};`, (err, rows) => {;});
-    }
-    res.send();
-  });
+  );
 });
 
 app.listen(PORT, () => {
