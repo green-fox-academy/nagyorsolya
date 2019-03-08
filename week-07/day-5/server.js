@@ -39,9 +39,10 @@ app.get("/posts", (req, res) => {
 app.post("/posts", (req, res) => {
   let title = req.body.title;
   let url = req.body.url;
-  //res.writeHead()
+  let userid = req.headers.userid;
+ 
   conn.query(
-    `INSERT INTO posts (title, url) VALUES ('${title}', '${url}');`,
+    `INSERT INTO posts (title, url, user_id) VALUES ('${title}', '${url}', '${userid}');`,
     (err, rows) => {
       if (err) {
         console.error(err);
@@ -131,7 +132,6 @@ app.delete("/posts/:id", (req, res) => {
       if (user_id == userid) {
         conn.query(`DELETE FROM posts WHERE post_id=${id};`, (err, rows) => {});
       }
-      res.send();
     }
   );
 });
