@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posts', (req, res) => {
-  conn.query('SELECT * FROM posts;', (err, rows) => {
+  conn.query('SELECT posts.title, posts.url, posts.score, users.name FROM posts LEFT JOIN users ON posts.user_id=users.user_id;', (err, rows) => {
     if (err) {
       console.error(err);
       res.status(500).send();
@@ -47,9 +47,9 @@ app.post('/posts', (req, res) => {
 });
 });
 
-app.post('/posts/:id/upvote', (req, res) => {
+app.put('/posts/:id/upvote', (req, res) => {
 let id = req.params.id
-conn.query(`UPDATE posts SET score = score + 1  WHERE id=${id};`, (err, rows) => {
+conn.query(`UPDATE posts SET score = score + 1  WHERE post_id=${id};`, (err, rows) => {
   if (err) {
     console.error(err);
     res.status(500).send();
@@ -58,6 +58,18 @@ conn.query(`UPDATE posts SET score = score + 1  WHERE id=${id};`, (err, rows) =>
   res.send(rows);
 });
 });
+
+app.put('/posts/:id/downvote', (req, res) => {
+  let id = req.params.id
+  conn.query(`UPDATE posts SET score = score - 1  WHERE post_id=${id};`, (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send();
+      return;
+    }
+    res.send(rows);
+  });
+  });
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
