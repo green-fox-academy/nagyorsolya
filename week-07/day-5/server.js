@@ -29,8 +29,22 @@ app.get('/posts', (req, res) => {
       res.status(500).send();
       return;
     }
-    res.send(rows);
+    res.json(rows);
 })
+});
+
+app.post('/posts', (req, res) => {
+  let title = req.body.title
+  let url = req.body.url
+//res.writeHead()
+  conn.query(`INSERT INTO posts (title, url) VALUES ('${title}', '${url}');`, (err, rows) => {
+  if (err) {
+    console.error(err);
+    res.status(500).send();
+    return;
+  }
+  res.send(rows);
+});
 });
 
 
