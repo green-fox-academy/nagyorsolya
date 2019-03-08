@@ -47,6 +47,17 @@ app.post('/posts', (req, res) => {
 });
 });
 
+app.post('/posts/:id/upvote', (req, res) => {
+let id = req.params.id
+conn.query(`UPDATE posts SET score = score + 1  WHERE id=${id};`, (err, rows) => {
+  if (err) {
+    console.error(err);
+    res.status(500).send();
+    return;
+  }
+  res.send(rows);
+});
+});
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
