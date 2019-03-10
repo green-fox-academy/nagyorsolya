@@ -56,14 +56,8 @@ app.get("/booklist", (req, res) => {
 
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/assets/views/index.html'));
-});
-
-app.get('/listofbooks', (req, res) => {
   res.sendFile(path.join(__dirname, '/assets/views/booklist.html'));
 });
-
-
 
 
 app.listen(PORT, () => {
