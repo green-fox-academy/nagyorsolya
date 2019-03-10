@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 
 app.get("/posts", (req, res) => {
   conn.query(
-    "SELECT posts.title, posts.url, posts.score, users.name FROM posts LEFT JOIN users ON posts.user_id=users.user_id;",
+    "SELECT posts.title, posts.url, posts.score, users.name, users.user_id FROM posts LEFT JOIN users ON posts.user_id=users.user_id;",
     (err, rows) => {
       if (err) {
         console.error(err);
@@ -48,10 +48,10 @@ app.post("/posts", (req, res) => {
         console.error(err);
         res.status(500).send();
         return;
-      }
-      res.send(rows);
-    }
-  );
+      }});
+    conn.query(`SELECT posts.title, posts.url, posts.score, users.name, users.user_id FROM posts LEFT JOIN users ON posts.user_id=users.user_id WHERE posts.title='${title}';`, 
+      (err, rows) => {res.json(rows)});
+
 });
 
 app.put("/posts/:id/upvote", (req, res) => {
