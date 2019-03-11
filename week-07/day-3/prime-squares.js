@@ -12,8 +12,6 @@ for (let i = 1; i <= 100; i++) {
 
 createDivs();
 
-let myTimeout;
-
 function colorize () {
 let divTags = document.querySelectorAll("div");
 for (let i = 0; i < divTags.length; i++) {
@@ -30,8 +28,8 @@ setTimeout(() => {
 colorize();
 
 function isPrime(value) {
-  for(var j = 2; j < value; j++) {
-      if(value % j === 0) {
+  for(var i = 2; i < value; i++) {
+      if(value % i === 0) {
           return false;
       }
   }
