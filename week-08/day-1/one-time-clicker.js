@@ -2,7 +2,7 @@
 
 //First solution with add and remove event listener
 
-let button = document.getElementsByTagName("button")[0];
+/*let button = document.getElementsByTagName("button")[0];
 
 function getDate () {
   let today = new Date();
@@ -15,9 +15,11 @@ function getDate () {
   button.removeEventListener('click', getDate);
 };
 
-button.addEventListener('click', getDate); 
+button.addEventListener('click', getDate); */
 
-/* //Second solution with classes
+ //Second solution with classes
+
+ let button = document.getElementsByTagName("button")[0];
 
 button.addEventListener('click', function () {
   if (button.className == "clickable") {
@@ -30,4 +32,4 @@ button.addEventListener('click', function () {
     console.log(today);
     button.className = "";
   };
-}); */
+});
