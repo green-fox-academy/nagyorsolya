@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button">Click me!</button>
+  </body>
+  <script>
+    let button = document.getElementsByTagName("button")[0];
+    button.addEventListener("click", function(e) {
+      let pTag = document.createElement("p");
+      let body = document.getElementsByTagName("body")[0];
+      body.appendChild(pTag);
+      setTimeout(() => {
+        pTag.innerText = "2 seconds ellapsed";
+      }, 2000);
+    });
+  </script>
+</html>
