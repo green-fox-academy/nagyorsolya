@@ -3,9 +3,7 @@
 function createNewHttpRequest(inputFieldValue) {
   let data = "";
   let httpRequest = new XMLHttpRequest();
-  //httpRequest.onreadystatechange = console.log;
   httpRequest.open("GET", "https://swapi.co/api/people/");
-  // httpRequest.setRequestHeader("Oirigin", '*');
 
   httpRequest.onload = () => {
     data = JSON.parse(httpRequest.responseText);
