@@ -9,10 +9,10 @@
     <h4>ACCOUNT LOGIN</h4>
     <form>
       <label for="username">USERNAME</label>
-      <input type="text" name="username" autofocus required />
+      <input type="text" name="username" pattern="[a-z]{5}" autofocus required />
       <label for="password">PASSWORD</label>
       <div id="passwordfield">
-        <input type="password" name="password" class="passwordfield" required />
+        <input type="password" name="password" class="passwordfield" pattern="[a-z]{3}[a-9]{3}"required />
         <img src="./eye.jpg" />
       </div>
       <a href="#">Forgot password?</a>
