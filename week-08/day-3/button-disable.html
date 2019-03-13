@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="button-disable.css">
-</head>
-<body>
-  <h4>What is your favourite pet?</h4>
-  <form>
-    <div>
-    <input type="radio" value="Dog" name="pet"/>
-    <label for="pet">Dog</label>
-  </div>
-  <div>
-    <input type="radio" value="Cat" name="pet"/>
-    <label for="pet">Cat</label>
-  </div>
-  <div>
-    <input type="radio" value="Viktor the goldfish" name="pet"/>
-    <label for="pet">Viktor the goldfish</label>
-  </div>
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="button-disable.css" />
+  </head>
+  <body>
+    <h4>What is your favourite pet?</h4>
+    <form>
+      <div id="formcontainer">
+        <div>
+          <input type="radio" value="Dog" name="pet" />
+          <label for="pet">Dog</label>
+        </div>
+        <div>
+          <input type="radio" value="Cat" name="pet" />
+          <label for="pet">Cat</label>
+        </div>
+        <div>
+          <input type="radio" value="Viktor" name="pet" />
+          <label for="pet">Viktor the goldfish</label>
+        </div>
+        <h4>Do you want to sign up for cat facts?</h4>
+        <div>
+          <input type="radio" value="yes" name="sign-up" />
+          <label for="sign-up">Yes</label>
+        </div>
+        <div>
+          <input type="radio" value="no" name="sign-up" />
+          <label for="sign-up">No</label>
+        </div>
+      </div>
+      <br />
+      <button type="button" disabled id="catbutton">I love cats</button>
+      <button type="button" disabled id="signupbutton">Sign up</button>
+      <div id="result"></div>
+    </form>
+  </body>
+  <script>
+    let signupButton = document.querySelector("#signupbutton");
+    let catButton = document.getElementById("catbutton");
+    let dogInput = document.querySelector('input[value = "Dog"]');
+    let catInput = document.querySelector('input[value = "Cat"]');
+    let fishInput = document.querySelector('input[value = "Viktor"]');
+    let inputs = document.querySelectorAll("input");
+    let noButton = document.querySelector('input[value = "no"]');
+    let yesButton = document.querySelector('input[value = "yes"]');
+    let result = document.querySelector("#result");
+
+    inputs.forEach(element => {
+      element.addEventListener("change", function() {
+        result.innerHTML = "";
+        if (dogInput.checked || catInput.checked) {
+          signupButton.disabled = false;
+        } 
+        if (yesButton.checked === true) {
+          catButton.disabled = false;
+        }
+        else if (yesButton.checked === false) {
+          catButton.disabled = true;
+        }
+      });
+    });
+    signupButton.addEventListener('click', function (){
+      result.innerHTML = "";
+      if (fishInput.checked === true && noButton.checked === true) {
+        let pTag = document.createElement("p");
+      pTag.innerText = "Sigh, we still added you to the cat facts list.";
+      result.appendChild(pTag);
+      }
+      else {
+        result.innerHTML = "";
+      let pTag = document.createElement("p");
+      pTag.innerText = "Thank you, you've successfully signed up for cat facts.";
+      result.appendChild(pTag);
+      }
+    })
+    catButton.addEventListener('click', function () {
+      result.innerHTML = "";
+      let pTag = document.createElement("p");
+      pTag.innerText = "Thank you, you've successfully signed up for cat facts.";
+      result.appendChild(pTag);
+    })
+  </script>
 </html>
