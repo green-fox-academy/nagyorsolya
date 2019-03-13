@@ -1,0 +1,9 @@
+input {
+  display: block;
+}
+
+.passwordfield {
+  background: url("./eye.jpg") no-repeat;
+  background-position: 95% center;
+  background-size: 10%;
+}
