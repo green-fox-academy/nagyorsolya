@@ -10,6 +10,12 @@ let genreResults = document.getElementById("genreresults");
 let genreDropDown = document.getElementById("genre-select");
 
 genreDropDown.addEventListener("change", function() {
+  movieResults.innerHTML = "";
+  movieDropDown.innerHTML = "";
+  let newOption = document.createElement("option");
+  newOption.innerText = "--Please choose a movie--";
+  movieDropDown.appendChild(newOption);
+
   if (scifiInput.selected === true) {
     let genre = scifiInput.innerText.toLowerCase();
     createDropDownList(genre);
@@ -25,7 +31,6 @@ genreDropDown.addEventListener("change", function() {
 });
 
 function createDropDownList(genre) {
-  movieDropDown.innerHTML = "";
   for (let i = 0; i < movieList.length; i++) {
     if (movieList[i].className === genre) {
       let newOption = document.createElement("option");
@@ -36,13 +41,15 @@ function createDropDownList(genre) {
   }
 }
 
-movieDropDown.addEventListener('change', function () {
+movieDropDown.addEventListener("change", function() {
   let pTag = document.createElement("p");
   movieResults.innerHTML = "";
   for (let i = 0; i < movieDropDown.options.length; i++) {
     if (movieDropDown.options[i].selected === true) {
-      pTag.innerText = `The selected movie is: ${movieDropDown.options[i].value}`;
+      pTag.innerText = `The selected movie is: ${
+        movieDropDown.options[i].value
+      }`;
     }
   }
   movieResults.appendChild(pTag);
-})
+});
