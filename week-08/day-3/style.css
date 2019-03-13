@@ -1,9 +1,46 @@
-input {
-  display: block;
+body {
+  margin: auto;
+  width: 100vh;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.passwordfield {
-  background: url("./eye.jpg") no-repeat;
-  background-position: 95% center;
-  background-size: 10%;
+h4 {
+  padding-right: 60px;
+}
+
+input {
+  display: block;
+  width: 162px;
+  height: 24px;
+}
+
+#passwordfield {
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+ width: 30px;
+ height: 20px;
+ position: relative;
+ right: 35px;
+ top: 5px;
+}
+
+a {
+  align-self: flex-end;
+  font-size: 12px;
+  padding-right: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 15px;
 }
