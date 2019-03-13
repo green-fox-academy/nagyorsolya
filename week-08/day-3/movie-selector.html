@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="movie-selector.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="genre-select">Choose a genre:</label>
+
+    <select id="genre-select">
+      <option value="">--Please choose an option--</option>
+      <div id="genreresults">
+        <option value="sci-fi">Sci-fi</option>
+        <option value="drama">Drama</option>
+        <option value="comedy">Comedy</option>
+      </div>
+    </select>
+    <label for="movie-select">Choose a movie:</label>
+
+    <select id="movie-select">
+      <option value="">--Please choose a movie--</option>
+    </select>
+    <div class="movieresults">
+      </div>
+    <ul id="movielist">
+      <li class="sci-fi">Moon</li>
+      <li class="sci-fi">2001 Space odessy</li>
+      <li class="sci-fi">Contact</li>
+      <li class="drama">Darkest hour</li>
+      <li class="drama">There will be blood</li>
+      <li class="drama">American beauty</li>
+      <li class="comedy">Airplane!</li>
+      <li class="comedy">Deadpool</li>
+      <li class="comedy">Wayne's World</li>
+    </ul>
+  </body>
+  <script src="movie-selector.js"></script>
+</html>
