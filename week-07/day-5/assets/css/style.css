@@ -1,0 +1,89 @@
+#header {
+  width: 100%;
+  height: 200px;
+  border: solid 1px;
+  margin: 0;
+  padding: 0;
+  background: url(https://cdn.steemitimages.com/DQmdZyvwvjCJtZkLNP9HWiNCh2ZodkTcenAtc3PkL9xSKwt/portada-facebook-pink-floyd1.jpg.e44fc9e10c29d337df3675b55394560b.jpg) no-repeat;
+  background-position: center;
+  background-color: black;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  justify-content: center;
+  height: 100%;
+}
+
+#article {
+display: flex;
+flex-grow: 1;
+border: solid 1px black;
+}
+
+#main-container {
+  flex-grow: 1;
+  width: 90%;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  margin: auto;
+  height: 100%;
+}
+
+#posts {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px;
+}
+
+#modification-elements {
+  flex-grow: 1;
+  border: solid 1px;
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#createpost {
+  background-color: rgb(74,163,223);
+  color: white;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  margin-bottom: 10x;
+}
+
+#textelements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 6;
+}
+
+p {
+  margin: 0;
+  padding: 5px;
+}
+
+#iconandscore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 10px;
+  align-items: center;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
