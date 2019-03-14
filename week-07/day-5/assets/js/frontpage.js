@@ -22,10 +22,12 @@ httpRequest.onload = () => {
     imageup.setAttribute("src", "/assets/upvote.png");
     imageup.setAttribute("id", data[i].post_id);
     iconAndScore.appendChild(imageup);
+
     let score = document.createElement("p");
     score.innerText = data[i].score;
     score.setAttribute("id", data[i].post_id);
     iconAndScore.appendChild(score);
+
     let imagedown = document.createElement("img");
     imagedown.setAttribute("class", "downvote");
     imagedown.setAttribute("src", "/assets/downvote.png");
@@ -35,14 +37,17 @@ httpRequest.onload = () => {
     let textElements = document.createElement("div");
     textElements.setAttribute("id", "textelements");
     articleDiv.appendChild(textElements);
+
     let postTitle = document.createElement("p");
     postTitle.innerText = data[i].title;
     textElements.appendChild(postTitle);
+
     let postModify = document.createElement("a");
     postModify.innerText = "Modify Remove";
     postModify.setAttribute("href", "#");
     textElements.appendChild(postModify);
   }
+  
   let images = document.getElementsByTagName("img");
   for (let i = 0; i < images.length; i++) {
     let imageID = images[i].getAttribute("id");
