@@ -11,6 +11,7 @@
 
 html {
   height: 100%;
+  background-color:rgb(238,238,238);
 }
 
 body {
@@ -22,12 +23,14 @@ body {
 #article {
 display: flex;
 flex-grow: 1;
-border: solid 1px black;
+/*border: solid 1px black; */
+background-color: white;
+border-bottom: solid 1px rgb(238,238,238);
 }
 
 #main-container {
   flex-grow: 1;
-  width: 90%;
+  width: 80%;
   display: flex;
   padding: 10px;
   justify-content: center;
@@ -39,12 +42,12 @@ border: solid 1px black;
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  border: solid 1px;
+  /*border: solid 1px; */
 }
 
 #modification-elements {
   flex-grow: 1;
-  border: solid 1px;
+  /*border: solid 1px; */
   margin-right: 10px;
   margin-left: 10px;
   display: flex;
@@ -86,4 +89,9 @@ p {
 img {
   width: 20px;
   height: 20px;
+}
+
+#textelements p {
+  font-size: 20px;
+  padding-top: 10px;
 }
