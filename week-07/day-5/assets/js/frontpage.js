@@ -47,7 +47,7 @@ httpRequest.onload = () => {
     postModify.setAttribute("href", "#");
     textElements.appendChild(postModify);
   }
-  
+
   let images = document.getElementsByTagName("img");
   for (let i = 0; i < images.length; i++) {
     let imageID = images[i].getAttribute("id");
@@ -78,6 +78,10 @@ httpRequest.onload = () => {
       });
     }
   }
+  let submitButton = document.getElementById("createpost");
+  submitButton.addEventListener("click", function() {
+    window.location.replace("http://localhost:3000/newpost");
+  });
 };
 
 httpRequest.send();

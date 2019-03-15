@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/frontpage.html"));
 });
 
+app.get("/newpost", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/add-new-post.html"));
+});
+
 app.get("/posts", (req, res) => {
   conn.query(
     "SELECT posts.title, posts.post_id, posts.url, posts.score, users.name, users.user_id FROM posts LEFT JOIN users ON posts.user_id=users.user_id;",
