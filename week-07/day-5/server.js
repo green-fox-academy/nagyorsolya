@@ -7,6 +7,7 @@ app.use(express.json()); //middleware
 const path = require("path");
 require("dotenv").config();
 let mysql = require("mysql");
+app.use(express.urlencoded({extended: true}));
 
 const conn = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -40,6 +41,9 @@ app.get("/posts", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
+
+console.log(req.body);
+//console.log(JSON.parse(req.body));
   let title = req.body.title;
   let url = req.body.url;
   let userid = req.headers.userid;

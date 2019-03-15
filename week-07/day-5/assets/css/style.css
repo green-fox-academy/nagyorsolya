@@ -6,7 +6,6 @@
   padding: 0;
   background: url(https://cdn.steemitimages.com/DQmdZyvwvjCJtZkLNP9HWiNCh2ZodkTcenAtc3PkL9xSKwt/portada-facebook-pink-floyd1.jpg.e44fc9e10c29d337df3675b55394560b.jpg) no-repeat;
   background-position: center;
-  /*background-size: 910.075px 200px;*/
 }
 
 html {
@@ -23,7 +22,6 @@ body {
 #article {
 display: flex;
 flex-grow: 1;
-/*border: solid 1px black; */
 background-color: white;
 border-bottom: solid 1px rgb(238,238,238);
 }
@@ -35,19 +33,16 @@ border-bottom: solid 1px rgb(238,238,238);
   padding: 10px;
   justify-content: center;
   margin: auto;
-  height: 100%;
 }
 
 #posts {
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  /*border: solid 1px; */
 }
 
 #modification-elements {
   flex-grow: 1;
-  /*border: solid 1px; */
   margin-right: 0px;
   margin-left: 10px;
   display: flex;

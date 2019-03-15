@@ -6,14 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="/posts" method="POST">
+    <form id="myForm">
       <div id="newpost">
         <label for="title">Title:</label>
-        <input type="text" placeholder="Add your title here" name="title" />
+        <input
+          type="text"
+          placeholder="Add your title here"
+          name="title"
+        />
         <label for="url">URL:</label>
-        <input type="text" placeholder="Write your post here" name="url" />
-        <br>
-        <button type="submit">Submit</button>
+        <input
+          type="text"
+          placeholder="Write your post here"
+          name="url"
+        />
+        <br />
+        <button type="submit" id="createpost">Submit</button>
       </div>
     </form>
   </body>
