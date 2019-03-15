@@ -12,6 +12,7 @@ httpRequest.onload = () => {
   for (let i = 0; i < data.length; i++) {
     let articleDiv = document.createElement("div");
     articleDiv.setAttribute("id", "article");
+    articleDiv.setAttribute("data-id", data[i].post_id)
     postList.appendChild(articleDiv);
     let iconAndScore = document.createElement("div");
     iconAndScore.setAttribute("id", "iconandscore");
@@ -43,8 +44,9 @@ httpRequest.onload = () => {
     textElements.appendChild(postTitle);
 
     let postModify = document.createElement("a");
-    postModify.innerText = "Modify Remove";
+    postModify.innerText = "Remove";
     postModify.setAttribute("href", "#");
+    postModify.setAttribute("id", data[i].post_id)
     textElements.appendChild(postModify);
   }
 
@@ -82,6 +84,21 @@ httpRequest.onload = () => {
   submitButton.addEventListener("click", function() {
     window.location.replace("http://localhost:3000/newpost");
   });
+
+  let aTags = document.getElementsByTagName("a");
+for (let i = 0; i < aTags.length; i++) {
+  let id = aTags[i].getAttribute("id");
+  aTags[i].addEventListener('click', function (e) {
+    e.preventDefault();
+    let removeItem = new XMLHttpRequest();
+        removeItem.open("DELETE", `/posts/${id}`);
+        removeItem.setRequestHeader("userid", 101);
+        removeItem.send();
+        removeItem.onload = () => {};
+        let deletedPost = document.querySelector(`div[data-id="${id}"`);
+        deletedPost.outerHTML = "";
+  });
+};
 };
 
 httpRequest.send();
