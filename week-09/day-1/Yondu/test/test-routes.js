@@ -1,29 +1,30 @@
 const test = require("tape");
 const request = require("supertest");
-const app = require("./routes");
-
+const app = require("../routes");
 
 test("groot endpoint", t => {
   // TODO: implement it
   request(app)
-    .get("/groot?message=something")
+    .get("/yondu?distance=100.0&time=10.0")
     .expect("Content-Type", /json/)
     .expect(200)
-    .expect({ received: "something", translated: "I am Groot!" })
+    .expect({ distance: "100.0", time: "10.0", speed: 10.0 })
     .end(function(err, res) {
       t.error(err);
       t.end();
     });
 });
 
-test("groot endpoint2", t => {
+test("groot endpoint", t => {
+  // TODO: implement it
   request(app)
-    .get("/groot")
+    .get("/yondu")
     .expect("Content-Type", /json/)
-    .expect(400)
-    .expect({ error: "I am Groot!" })
+    .expect(404)
+    .expect({error: "Please provide input parameters!"})
     .end(function(err, res) {
-      t.error(err); 
+      t.error(err);
       t.end();
     });
 });
+
