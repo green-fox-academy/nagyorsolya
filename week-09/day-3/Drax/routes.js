@@ -23,7 +23,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/drax", (req, res) => {
-  
 conn.query('SELECT * FROM food;', (err, rows) => {
   res.json(rows);
 });  
