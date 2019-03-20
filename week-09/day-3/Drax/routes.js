@@ -25,8 +25,16 @@ app.get("/", (req, res) => {
 app.get("/drax", (req, res) => {
 conn.query('SELECT * FROM food;', (err, rows) => {
   res.json(rows);
+});
 });  
 
+app.post("/add", (req, res) => {
+  let foodName = req.body.name;
+  let foodAmount = req.body.amount;
+  let foodCalorie = req.body.calorie;
+  conn.query(`INSERT INTO food (name, amount, calories) VALUES ('${foodName}', ${foodAmount}, ${foodCalorie});`, (err, rows) => {
+    res.json(rows);
+  });
 });
 
 module.exports = app;
