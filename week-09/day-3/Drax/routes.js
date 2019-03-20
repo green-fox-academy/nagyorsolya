@@ -8,7 +8,6 @@ require("dotenv").config();
 let mysql = require("mysql");
 app.use(express.urlencoded({ extended: true }));
 
-
 const conn = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -23,24 +22,34 @@ app.get("/", (req, res) => {
 });
 
 app.get("/drax", (req, res) => {
-conn.query('SELECT * FROM food;', (err, rows) => {
-  res.json(rows);
+  conn.query("SELECT * FROM food;", (err, rows) => {
+    res.json(rows);
+  });
 });
-});  
 
 app.post("/add", (req, res) => {
   let foodName = req.body.name;
   let foodAmount = req.body.amount;
   let foodCalorie = req.body.calorie;
-  conn.query(`INSERT INTO food (name, amount, calories) VALUES ('${foodName}', ${foodAmount}, ${foodCalorie});`, (err, rows) => {
-    res.json(rows);
-  });
+  conn.query(
+    `INSERT INTO food (name, amount, calories) VALUES ('${foodName}', ${foodAmount}, ${foodCalorie});`,
+    (err, rows) => {
+      res.json(rows);
+    }
+  );
 });
 
 app.delete("/delete", (req, res) => {
   let id = req.body.id;
-  conn.query(`DELETE FROM food WHERE id=${id};`, (err, rows) => {
+  conn.query(`DELETE FROM food WHERE id=${id};`, (err, rows) => {});
+});
+
+app.put("/modify", (req, res) => {
+  let id = req.body.id;
+  let newAmount = req.body.amount;
+  conn.query(`UPDATE food SET amount=${newAmount} WHERE id=${id};`, (err, rows) => {
+    res.json(rows);
   });
-  });  
+});
 
 module.exports = app;
