@@ -37,4 +37,10 @@ app.post("/add", (req, res) => {
   });
 });
 
+app.delete("/delete", (req, res) => {
+  let id = req.body.id;
+  conn.query(`DELETE FROM food WHERE id=${id};`, (err, rows) => {
+  });
+  });  
+
 module.exports = app;
