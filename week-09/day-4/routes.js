@@ -43,7 +43,7 @@ app.get("/api/game", (req, res) => {
       idArray.push(element.id);
     })
   
-let randomQuestionNumber = Math.floor(Math.random() * idArray.length/2) + 0;
+let randomQuestionNumber = Math.floor(Math.random() * idArray.length) + 0;
   conn.query(
     `SELECT * from questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${idArray[randomQuestionNumber]};`,
     (err, rows) => {
@@ -64,6 +64,9 @@ let randomQuestionNumber = Math.floor(Math.random() * idArray.length/2) + 0;
 
 app.get("/api/questions", (req, res) => {
   //This will render all the questions
+conn.query('SELECT * FROM questions;', (err, rows) => {
+res.json(rows);
+})
 });
 
 app.post("/api/questions", (req, res) => {
