@@ -17,6 +17,16 @@ const conn = mysql.createConnection({
 
 app.use("/assets", express.static("assets"));
 
+//Just for testing how the database looks like
+app.get("/listall", (req, res) => {
+  conn.query(
+    "SELECT * from questions LEFT JOIN answers ON questions.id = answers.question_id;",
+    (err, rows) => {
+      res.json(rows);
+    }
+  );
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/assets/views/gamepage.html"));
 });
@@ -26,22 +36,34 @@ app.get("/questions", (req, res) => {
 });
 
 app.get("/api/game", (req, res) => {
-  
-  //This will render a random question with its answers
+  let randomQuestionNumber = Math.floor(Math.random() * 10) + 1;
+  conn.query(
+    `SELECT * from questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${randomQuestionNumber};`,
+    (err, rows) => {
+      conn.query(
+        `SELECT answers.id, question_id, answer, is_correct from questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${randomQuestionNumber};`,
+        (err, result) => {
+          res.json({
+            id: rows[0].question_id,
+            question: rows[0].question,
+            answers: result
+          });
+          console.log(result);
+        }
+      );
+    }
+  );
 });
 
 app.get("/api/questions", (req, res) => {
-  
   //This will render all the questions
 });
 
 app.post("/api/questions", (req, res) => {
-  
   //This will add a new question and its answers to the database
 });
 
 app.delete("/api/questions/:id", (req, res) => {
-  
   //This will delete a question from the database by entry
 });
 
