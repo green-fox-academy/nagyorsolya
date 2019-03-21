@@ -83,6 +83,7 @@ app.post("/api/questions", (req, res) => {
   let iscorrect3 = req.body.iscorrect3;
   let iscorrect4 = req.body.iscorrect4;
   let id = 0;
+  console.log(req.body);
 
   //This will add a new question and its answers to the database
   conn.query(
@@ -94,6 +95,7 @@ app.post("/api/questions", (req, res) => {
     (err, newid) => {
       id = newid;
       console.log(id);
+      console.log(newQuestion);
     }
   );
   conn.query(

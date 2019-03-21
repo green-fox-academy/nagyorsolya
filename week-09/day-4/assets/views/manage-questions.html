@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="/assets/views/manage-style.css">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Manage Questions:</h1>
-  <script src="/assets/js/manage-questions.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/assets/views/manage-style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="createNewQuestion">Create a new question</h1>
+    <div id="create">
+      <form id="addNewQuestion">
+        <label for="question"></label>
+        <input type="text" placeholder="Type your question here" name="question" id="eh"/>
+        <h2>Answers</h2>
+        <div>
+          <div>
+            <label for="answer">#1</label>
+            <input type="text" name="answer1" id="one" />
+            <input type="radio" name="answer" id="1" />
+          </div>
+          <div>
+            <label for="answer">#2</label>
+            <input type="text" name="answer2" id="two" />
+            <input type="radio" name="answer" id="2" />
+          </div>
+          <div>
+            <label for="answer">#3</label>
+            <input type="text" name="answer3" id="three" />
+            <input type="radio" name="answer" id="3" />
+          </div>
+          <div>
+            <label for="answer">#4</label>
+            <input type="text" name="answer4" id="four" />
+            <input type="radio" name="answer" id="4" />
+          </div>
+          <input type="submit" value="Submit" id="submitButton" />
+        </div>
+      </form>
+    </div>
+    <h1 id="manage">Manage Questions:</h1>
+    <script src="/assets/js/manage-questions.js"></script>
+  </body>
 </html>

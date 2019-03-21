@@ -1,4 +1,4 @@
-div {
+.something {
   width: 700px;
   height: 100px;
   margin-bottom: 10px;
@@ -12,4 +12,14 @@ button {
   width: 60px;
   height: 20px;
   margin-left: 20px;
+}
+
+#addNewQuestion {
+  display: flex;
+  flex-direction: column;
+}
+
+#submitButton {
+  width: 70px;
+  height: 30px;
 }
