@@ -1,0 +1,15 @@
+div {
+  width: 700px;
+  height: 100px;
+  margin-bottom: 10px;
+  background-color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 60px;
+  height: 20px;
+  margin-left: 20px;
+}

@@ -12,6 +12,14 @@ httprequest.onload = () => {
   createElement("answer2", 1, data);
   createElement("answer3", 2, data);
   createElement("answer4", 3, data);
+  let goToManageQuestions = document.createElement("a");
+  let body = document.getElementsByTagName('body')[0];
+  body.appendChild(goToManageQuestions);
+  goToManageQuestions.innerText = "Manage questions";
+  goToManageQuestions.setAttribute('href', '#');
+  goToManageQuestions.addEventListener('click', function () {
+    window.location.replace('http://localhost:8080/questions');
+  })
 
   let divTags = document.querySelectorAll("div");
   let numberOfclicks = 0;
