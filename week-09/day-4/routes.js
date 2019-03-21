@@ -93,25 +93,20 @@ app.post("/api/questions", (req, res) => {
   conn.query(
     `SELECT id FROM questions WHERE question='${newQuestion}';`,
     (err, newid) => {
-      id = newid;
-      console.log(id);
-      console.log(newQuestion);
-    }
-  );
+      id = newid[0].id;
   conn.query(
     `INSERT INTO answers (question_id, answer, is_correct) VALUES (${id}, '${newAnswer1}', ${iscorrect1}), (${id}, '${newAnswer2}',
      ${iscorrect2}), (${id}, '${newAnswer3}', ${iscorrect3}), (${id}, '${newAnswer4}', ${iscorrect4});`,
     (err, rowss) => {
-      console.log(rowss);
     }
   );
   conn.query(
     `SELECT answer, is_correct FROM answers WHERE question_id=${id};`,
     (err, endresult) => {
-      console.log(newQuestion, endresult);
       res.json({ question: newQuestion, answers: endresult });
     }
   );
+});
 });
 
 app.delete("/api/questions/:id", (req, res) => {
