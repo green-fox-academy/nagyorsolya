@@ -36,23 +36,30 @@ app.get("/questions", (req, res) => {
 });
 
 app.get("/api/game", (req, res) => {
-  let randomQuestionNumber = Math.floor(Math.random() * 10) + 1;
+
+  conn.query('SELECT id FROM questions;', (err, ids) => {
+    let idArray = [];
+    Array.from(ids).forEach(element => {
+      idArray.push(element.id);
+    })
+  
+let randomQuestionNumber = Math.floor(Math.random() * idArray.length/2) + 0;
   conn.query(
-    `SELECT * from questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${randomQuestionNumber};`,
+    `SELECT * from questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${idArray[randomQuestionNumber]};`,
     (err, rows) => {
       conn.query(
-        `SELECT answers.id, question_id, answer, is_correct from questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${randomQuestionNumber};`,
+        `SELECT answers.id, question_id, answer, is_correct from questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${idArray[randomQuestionNumber]};`,
         (err, result) => {
           res.json({
             id: rows[0].question_id,
             question: rows[0].question,
             answers: result
           });
-          console.log(result);
         }
       );
     }
   );
+})
 });
 
 app.get("/api/questions", (req, res) => {
