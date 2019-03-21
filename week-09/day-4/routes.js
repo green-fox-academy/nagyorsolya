@@ -113,7 +113,12 @@ app.post("/api/questions", (req, res) => {
 });
 
 app.delete("/api/questions/:id", (req, res) => {
+  let id = req.params.id;
   //This will delete a question from the database by entry
+  conn.query(`DELETE FROM questions WHERE id=${id};`, (err, rows) => {
+  });
+  conn.query(`DELETE FROM answers WHERE question_id=${id};`, (err, rows) => {
+  });
 });
 
 module.exports = app;
