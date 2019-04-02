@@ -1,0 +1,16 @@
+.city {
+  width: 660px;
+  height: 200px;
+  display: flex;
+  
+}
+
+.CountryAndCity {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}

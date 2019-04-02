@@ -3,4 +3,7 @@ body {
   height: 100vh;
   margin: auto;
   background-color: rgb(236,240,241);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
