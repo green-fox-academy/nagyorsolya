@@ -1,6 +1,6 @@
 body {
   width: 700px;
-  height: 100vh;
+  height: 100%;
   margin: auto;
   background-color: rgb(236,240,241);
   display: flex;
