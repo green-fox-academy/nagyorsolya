@@ -5,4 +5,5 @@ export interface Weather {
   name: string;
   main: Main;
   sys: Sys;
+  list: [];
 }

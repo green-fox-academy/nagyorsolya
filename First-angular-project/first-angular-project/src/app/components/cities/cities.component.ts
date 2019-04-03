@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import {Weather} from '../../models/Weather';
 
 
 @Component({
@@ -8,7 +9,8 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./cities.component.css"]
 })
 export class CitiesComponent implements OnInit {
-  @Input() city: Object;
+  @Input() city: Weather;
+  @Input() response: Weather;
 
   constructor() {}
 

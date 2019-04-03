@@ -1,7 +1,7 @@
 <div class="search">
-  <input type="text" [(ngModel)]="search" />
+  <input type="text" [(ngModel)]="search"/>
   <br />
-  <button (click)="onSearch()">Search</button>
+  <button (click)="onSearch()" >Search</button>
 </div>
 <div *ngIf="!search">
   <app-search [response]="response"></app-search>

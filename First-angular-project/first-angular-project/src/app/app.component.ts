@@ -22,7 +22,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.apiSvc.getThreeCityInfo().subscribe((weather: Weather) => {
-      console.log(weather);
+      //console.log(weather);
       this.response = weather;
     });
   }
@@ -32,6 +32,7 @@ export class AppComponent {
       this.city.name = weather.name;
       this.city.temperature = weather.main.temp;
       this.city.country = weather.sys.country;
+      console.log(weather.sys.country);
     });
   }
 }
