@@ -1,16 +1,9 @@
-<body>
-  <div class="search">
-  <input type="text" [(ngModel)]="inputText"/>
-  <br>
-  <button>Search</button>
+<div class="search">
+  <input type="text" [(ngModel)]="search" />
+  <br />
+  <button (click)="onSearch()">Search</button>
 </div>
-<div *ngIf="!inputText">
-  <app-seattle></app-seattle>
-  <app-miami></app-miami>
-  <app-barcelona></app-barcelona>
-  <app-london></app-london>
-  <app-budapest></app-budapest>
+<div *ngIf="!search">
+  <app-search [response]="response"></app-search>
 </div>
-</body>
-
-<router-outlet></router-outlet>
+<app-cities *ngIf="search" [city]="city"></app-cities>
