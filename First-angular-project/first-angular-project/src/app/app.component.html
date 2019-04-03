@@ -1,9 +1,16 @@
 <body>
+  <div class="search">
+  <input type="text" [(ngModel)]="inputText"/>
+  <br>
+  <button>Search</button>
+</div>
+<div *ngIf="!inputText">
   <app-seattle></app-seattle>
   <app-miami></app-miami>
   <app-barcelona></app-barcelona>
   <app-london></app-london>
   <app-budapest></app-budapest>
+</div>
 </body>
 
 <router-outlet></router-outlet>
