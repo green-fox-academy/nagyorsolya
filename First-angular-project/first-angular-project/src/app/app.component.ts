@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Weather } from "./models/Weather";
 import { ApiService } from "./services/api.service";
@@ -16,10 +16,13 @@ export class AppComponent {
     country: ""
   };
 
+  @Input() cityNumber: number;
+
   search: string;
   response: Weather;
   error: string;
-  viewChanger:boolean = false;
+  viewChanger: boolean = false;
+  cityID: number;
 
   constructor(private apiSvc: ApiService) {}
 
@@ -36,9 +39,13 @@ export class AppComponent {
     this.viewChanger = true;
     this.apiSvc.getWeatherInfo(this.search).subscribe(
       (weather: Weather) => {
-        this.city.name = weather.name;
-        this.city.temperature = Math.floor(weather.main.temp - 273);
-        this.city.country = weather.sys.country;
+        this.response = weather;
+        if (weather.id) {
+          this.cityID = weather.id;
+          this.city.name = weather.name;
+          this.city.temperature = Math.floor(weather.main.temp - 273);
+          this.city.country = weather.sys.country;
+        }
       },
       error => {
         this.error = error;

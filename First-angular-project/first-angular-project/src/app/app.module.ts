@@ -8,13 +8,15 @@ import { ApiService } from './services/api.service';
 import { FormsModule} from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { CitiesComponent } from './components/cities/cities.component';
+import { SearchbyidComponent } from './searchbyid/searchbyid.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
      SearchComponent,
-     CitiesComponent
+     CitiesComponent,
+     SearchbyidComponent
   ],
   imports: [
     BrowserModule,
