@@ -3,6 +3,7 @@
   <br />
   <button (click)="onSearch()" >Search</button>
 </div>
+<p>{{error}}</p>
 <div *ngIf="!search">
   <app-search [response]="response"></app-search>
 </div>
