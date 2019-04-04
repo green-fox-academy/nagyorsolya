@@ -19,6 +19,7 @@ export class AppComponent {
   search: string;
   response: Weather;
   error: string;
+  viewChanger:boolean = false;
 
   constructor(private apiSvc: ApiService) {}
 
@@ -26,13 +27,13 @@ export class AppComponent {
     this.apiSvc.getThreeCityInfo().subscribe(
       (weather: Weather) => {
         this.response = weather;
-        console.log(weather);
       },
       error => (this.error = error)
     );
   }
 
   onSearch() {
+    this.viewChanger = true;
     this.apiSvc.getWeatherInfo(this.search).subscribe(
       (weather: Weather) => {
         this.city.name = weather.name;

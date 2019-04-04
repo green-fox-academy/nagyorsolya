@@ -4,7 +4,7 @@
   <button (click)="onSearch()" >Search</button>
 </div>
 <p>{{error}}</p>
-<div *ngIf="!search">
+<div *ngIf="!viewChanger">
   <app-search [response]="response"></app-search>
 </div>
-<app-cities *ngIf="search" [city]="city"></app-cities>
+<app-cities *ngIf="viewChanger" [city]="city"></app-cities>
