@@ -9,4 +9,9 @@ export interface Weather {
   list: [];
   id: number;
   city: City;
+  weather: weather;
+}
+
+export interface weather {
+  icon: string;
 }

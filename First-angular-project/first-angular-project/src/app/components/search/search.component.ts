@@ -8,7 +8,11 @@ import { Weather } from 'src/app/models/Weather';
 })
 export class SearchComponent implements OnInit {
 
-  @Input() response:Weather;
+  @Input() response:Weather; 
+
+  url: string = "http://openweathermap.org/img/w/";
+  urlEnd: string = ".png";
+
 
   constructor() { }
 

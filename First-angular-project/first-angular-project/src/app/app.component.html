@@ -7,5 +7,5 @@
 <div *ngIf="!viewChanger">
   <app-search [response]="response"></app-search>
 </div>
-<app-cities *ngIf="response && response.id" [city]="city"></app-cities>
+<app-cities *ngIf="response && response.id" [city]="city" [icon]="icon"></app-cities>
 <app-searchbyid *ngIf="response && response.city && !response.id" [response]="response"></app-searchbyid>

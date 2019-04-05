@@ -14,11 +14,10 @@ import {Weather} from '../../models/Weather';
 export class CitiesComponent implements OnInit {
   @Input() city: Weather;
   @Input() response: Weather;
-
-url: string = "https://github.com/green-fox-academy/teaching-materials/blob/master/project-phase/0th-week-projects/angular/weather-app/assets/icons/cloudy.png?raw=true";
-
+    
   constructor() {}
-
+  
+  @Input() icon: string;
   ngOnInit() {
   }
 }

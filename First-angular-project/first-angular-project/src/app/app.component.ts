@@ -23,6 +23,7 @@ export class AppComponent {
   error: string;
   viewChanger: boolean = false;
   cityID: number;
+  icon: string;
 
   constructor(private apiSvc: ApiService) {}
 
@@ -30,17 +31,20 @@ export class AppComponent {
     this.apiSvc.getThreeCityInfo().subscribe(
       (weather: Weather) => {
         this.response = weather;
+        console.log(weather);
       },
       error => (this.error = error)
     );
   }
-
   onSearch() {
     this.viewChanger = true;
     this.apiSvc.getWeatherInfo(this.search).subscribe(
       (weather: Weather) => {
         this.response = weather;
         if (weather.id) {
+          this.icon = `http://openweathermap.org/img/w/${
+            weather.weather[0].icon
+          }.png`;
           this.cityID = weather.id;
           this.city.name = weather.name;
           this.city.temperature = Math.floor(weather.main.temp - 273);

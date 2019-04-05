@@ -1,9 +1,9 @@
 <div class="body">
   <h3>{{ nameOfCity }}</h3>
   <h4>{{ nameOfCountry }}</h4>
-  <div class="city" *ngFor="let city of response?.list.slice(0, 5)">
+  <div class="city" *ngFor="let city of response?.list.slice(0,5)">
     <div class="CountryAndCity"></div>
     <p>{{city.main.temp-273.15 | number:0}}°C</p>
-    <img src="{{ url }}" />
+    <img src={{url+city.weather[0].icon+urlEnd}}>
   </div>
 </div>

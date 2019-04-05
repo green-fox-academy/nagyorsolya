@@ -13,16 +13,15 @@ export class SearchbyidComponent implements OnInit {
 
   nameOfCity: string;
   nameOfCountry: string;
+  url: string = "http://openweathermap.org/img/w/";
+  urlEnd: string = ".png";
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.response);
-    console.log(this.response.city);
+
     this.nameOfCity = this.response.city.name;
-    console.log(this.nameOfCity);
     this.nameOfCountry = this.response.city.country;
-    console.log(this.nameOfCountry);
 
   }
 
