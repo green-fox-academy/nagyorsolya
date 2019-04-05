@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Weather } from "./models/Weather";
 import { ApiService } from "./services/api.service";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -10,7 +11,7 @@ import { ApiService } from "./services/api.service";
 })
 export class AppComponent {
   city = {
-    name: "",
+    name: "London",
     search: "",
     temperature: 0,
     country: ""
@@ -25,7 +26,7 @@ export class AppComponent {
   cityID: number;
   icon: string;
 
-  constructor(private apiSvc: ApiService) {}
+  constructor(private apiSvc: ApiService, private route: Router) {}
 
   ngOnInit() {
     this.apiSvc.getThreeCityInfo().subscribe(
@@ -35,6 +36,9 @@ export class AppComponent {
       },
       error => (this.error = error)
     );
+
+    //this.search = this.route.snapshot.paramMap.get("city");
+    console.log(this.search);
   }
   onSearch() {
     this.viewChanger = true;
@@ -55,5 +59,12 @@ export class AppComponent {
         this.error = error;
       }
     );
+  }
+  temp() {
+    this.route.events.subscribe((asd) => {
+    console.log(asd);
+    
+    });
+    
   }
 }

@@ -9,3 +9,4 @@
 </div>
 <app-cities *ngIf="response && response.id" [city]="city" [icon]="icon"></app-cities>
 <app-searchbyid *ngIf="response && response.city && !response.id" [response]="response"></app-searchbyid>
+<button (click)="temp()" [routerLink]="['cities', city.name]">Something</button>

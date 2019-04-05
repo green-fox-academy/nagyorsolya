@@ -1,6 +1,6 @@
 <div class="body">
   <div class="city" *ngFor="let city of response?.list">
-    <div class="CountryAndCity">
+    <div id="{{city.sys.id}}"class="CountryAndCity">
       <h3>{{ city.name }}</h3>
       <h4>{{ city.sys.country }}</h4>
     </div>

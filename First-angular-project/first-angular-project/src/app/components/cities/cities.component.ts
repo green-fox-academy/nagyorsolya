@@ -19,5 +19,6 @@ export class CitiesComponent implements OnInit {
   
   @Input() icon: string;
   ngOnInit() {
+  
   }
 }
