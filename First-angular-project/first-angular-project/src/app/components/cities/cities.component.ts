@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import {Weather} from '../../models/Weather';
+import { ActivatedRoute, Params } from '@angular/router';
 
 
 @Component({
@@ -14,11 +15,12 @@ import {Weather} from '../../models/Weather';
 export class CitiesComponent implements OnInit {
   @Input() city: Weather;
   @Input() response: Weather;
+
     
-  constructor() {}
+  constructor(private activeRoute: ActivatedRoute) {
+  }
   
   @Input() icon: string;
   ngOnInit() {
-  
   }
 }

@@ -9,6 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { CitiesComponent } from './components/cities/cities.component';
 import { SearchbyidComponent } from './searchbyid/searchbyid.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
      SearchComponent,
      CitiesComponent,
      SearchbyidComponent,
+     DashboardComponent,
   ],
   imports: [
     BrowserModule,

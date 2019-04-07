@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import  { AppComponent} from './app.component';
 import { CitiesComponent} from './components/cities/cities.component'
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SearchbyidComponent} from './searchbyid/searchbyid.component';
 
 
 
 const routes: Route[] = [
-  {path: '', component: AppComponent},
-  {path: 'cities/:city', component: AppComponent}
+  {path: '', component: DashboardComponent},
+  //Hogyan tudunk objectet átadni e helyett v. query param helyett?
+  //{path: 'cities/:name/:country/:temp/:icon', component: CitiesComponent},
+  {path: 'searchbyid/:id', component: SearchbyidComponent},
 ];
 
 @NgModule({
